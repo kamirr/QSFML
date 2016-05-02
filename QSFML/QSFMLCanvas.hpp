@@ -3,6 +3,7 @@
 
 #include <SFML/Graphics.hpp>
 #include <QMouseEvent>
+#include <QKeyEvent>
 #include <QWidget>
 #include <QTimer>
 
@@ -20,14 +21,23 @@ public:
     virtual ~QSFMLCanvas();
 
     virtual void OnInit();
-    virtual void OnUpdate();
+    virtual void OnUpdate(sf::Time frameTime);
 
     bool pollEvent(sf::Event & ev);
 
+    /* =============== *
+     * EVENTS HANDLING *
+     * =============== */
+    //Mouse
     void mousePressEvent(QMouseEvent *e);
     void mouseReleaseEvent(QMouseEvent *e);
 
+    //Keyboard
+    void keyPressEvent(QKeyEvent *event);
+    void keyReleaseEvent(QKeyEvent *event);
+
 private:
+    sf::Clock frameClock;
     QTimer refreshTimer;
     bool initialized;
 
