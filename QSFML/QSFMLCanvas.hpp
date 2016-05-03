@@ -3,6 +3,7 @@
 
 #include <SFML/Graphics.hpp>
 #include <QMouseEvent>
+#include <QWheelEvent>
 #include <QKeyEvent>
 #include <QWidget>
 #include <QTimer>
@@ -29,13 +30,16 @@ namespace qsf
         /* =============== *
          * EVENTS HANDLING *
          * =============== */
-        //Mouse
+        //Mouse buttons
         void mousePressEvent(QMouseEvent *e);
         void mouseReleaseEvent(QMouseEvent *e);
 
+        //Mouse wheel
+        void wheelEvent(QWheelEvent *e);
+
         //Keyboard
-        void keyPressEvent(QKeyEvent *event);
-        void keyReleaseEvent(QKeyEvent *event);
+        void keyPressEvent(QKeyEvent *e);
+        void keyReleaseEvent(QKeyEvent *e);
 
     private:
         bool _initialized;

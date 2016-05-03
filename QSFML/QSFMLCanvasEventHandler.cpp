@@ -2,9 +2,9 @@
 #include <SFML/System.hpp>
 #include "keyconverter.hpp"
 
-//Mouse events
 namespace qsf
 {
+    //Mouse buttons events
     void QSFMLWidget::mousePressEvent(QMouseEvent *e)
     {
         sf::Event ev;
@@ -26,6 +26,20 @@ namespace qsf
         ev.mouseButton.y = e->localPos().y();
 
         pushEvent(ev);
+    }
+
+    //Mouse Wheel events
+    void QSFMLWidget::wheelEvent(QWheelEvent *e)
+    {
+        sf::Event ev;
+        ev.type = sf::Event::MouseWheelMoved;
+
+        ev.mouseWheel.delta = e->delta() / 8 / 15;
+        ev.mouseWheel.x = sf::Mouse::getPosition(*this).x;
+        ev.mouseWheel.y = sf::Mouse::getPosition(*this).y;
+
+        pushEvent(ev);
+        e->accept();
     }
 
     //Keyboard events
