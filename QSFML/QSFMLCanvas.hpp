@@ -22,7 +22,7 @@ namespace qsf
         virtual void paintEvent(QPaintEvent*);
 
         virtual void OnInit();
-        virtual void OnUpdate(sf::Time frameTime);
+        virtual void OnUpdate();
 
         bool pollEvent(sf::Event & ev);
 
@@ -39,11 +39,14 @@ namespace qsf
 
     private:
         bool _initialized;
-        sf::Clock frameClock;
         QTimer refreshTimer;
+        sf::Time _frameTime;
+        sf::Clock frameClock;
 
     protected:
         const bool & initialized = _initialized;
+        const sf::Time & frameTime = _frameTime;
+
         void pushEvent(sf::Event & ev);
         std::vector<sf::Event> SfEvents;
     };

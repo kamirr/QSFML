@@ -44,12 +44,13 @@ namespace qsf
     }
     void QSFMLWidget::paintEvent(QPaintEvent*)
     {
-        OnUpdate(frameClock.restart());
+        _frameTime = frameClock.restart();
+        OnUpdate();
         RenderWindow::display();
     }
 
-    void QSFMLWidget::OnInit()                      {} /* TO BE DERIVED */
-    void QSFMLWidget::OnUpdate(sf::Time frameTime)  {} /* TO BE DERIVED */
+    void QSFMLWidget::OnInit()    {} /* TO BE DERIVED */
+    void QSFMLWidget::OnUpdate()  {} /* TO BE DERIVED */
 
     bool QSFMLWidget::pollEvent(sf::Event& ev)
     {
