@@ -5,61 +5,64 @@
     #include <X11/Xlib.h>
 #endif
 
-QSFMLWidget::QSFMLWidget(QWidget* Parent, const QPoint& Position, const QSize& Size, unsigned int FrameTime)
-    : QWidget(Parent),
-      _initialized(false)
+namespace qsf
 {
-    setAttribute(Qt::WA_PaintOnScreen);
-    setAttribute(Qt::WA_OpaquePaintEvent);
-    setAttribute(Qt::WA_NoSystemBackground);
-
-    setFocusPolicy(Qt::StrongFocus);
-
-    move(Position);
-    resize(Size);
-
-    refreshTimer.setInterval(FrameTime);
-    frameClock.restart();
-}
-QSFMLWidget::~QSFMLWidget() {}
-void QSFMLWidget::showEvent(QShowEvent*)
-{
-    if (!_initialized)
+    QSFMLWidget::QSFMLWidget(QWidget* Parent, const QPoint& Position, const QSize& Size, unsigned int FrameTime)
+        : QWidget(Parent),
+          _initialized(false)
     {
-        RenderWindow::create((sf::WindowHandle) winId());
+        setAttribute(Qt::WA_PaintOnScreen);
+        setAttribute(Qt::WA_OpaquePaintEvent);
+        setAttribute(Qt::WA_NoSystemBackground);
 
-        OnInit();
+        setFocusPolicy(Qt::StrongFocus);
 
-        connect(&refreshTimer, SIGNAL(timeout()), this, SLOT(repaint()));
-        refreshTimer.start();
-        _initialized = true;
+        move(Position);
+        resize(Size);
+
+        refreshTimer.setInterval(FrameTime);
+        frameClock.restart();
     }
-}
+    QSFMLWidget::~QSFMLWidget() {}
+    void QSFMLWidget::showEvent(QShowEvent*)
+    {
+        if (!_initialized)
+        {
+            RenderWindow::create((sf::WindowHandle) winId());
 
-QPaintEngine* QSFMLWidget::paintEngine() const
-{
-    return 0;
-}
-void QSFMLWidget::paintEvent(QPaintEvent*)
-{
-    OnUpdate(frameClock.restart());
-    RenderWindow::display();
-}
+            OnInit();
 
-void QSFMLWidget::OnInit()                      {} /* TO BE DERIVED */
-void QSFMLWidget::OnUpdate(sf::Time frameTime)  {} /* TO BE DERIVED */
+            connect(&refreshTimer, SIGNAL(timeout()), this, SLOT(repaint()));
+            refreshTimer.start();
+            _initialized = true;
+        }
+    }
 
-bool QSFMLWidget::pollEvent(sf::Event& ev)
-{
-    if(SfEvents.size() == 0)
-        return false;
+    QPaintEngine* QSFMLWidget::paintEngine() const
+    {
+        return 0;
+    }
+    void QSFMLWidget::paintEvent(QPaintEvent*)
+    {
+        OnUpdate(frameClock.restart());
+        RenderWindow::display();
+    }
 
-    ev = *(SfEvents.end() - 1);
-    SfEvents.erase(SfEvents.end() - 1);
+    void QSFMLWidget::OnInit()                      {} /* TO BE DERIVED */
+    void QSFMLWidget::OnUpdate(sf::Time frameTime)  {} /* TO BE DERIVED */
 
-    return true;
-}
-void QSFMLWidget::pushEvent(sf::Event & ev)
-{
-    SfEvents.push_back(ev);
+    bool QSFMLWidget::pollEvent(sf::Event& ev)
+    {
+        if(SfEvents.size() == 0)
+            return false;
+
+        ev = *(SfEvents.end() - 1);
+        SfEvents.erase(SfEvents.end() - 1);
+
+        return true;
+    }
+    void QSFMLWidget::pushEvent(sf::Event & ev)
+    {
+        SfEvents.push_back(ev);
+    }
 }
