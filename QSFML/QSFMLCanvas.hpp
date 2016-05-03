@@ -7,18 +7,17 @@
 #include <QWidget>
 #include <QTimer>
 
-class QSFMLCanvas
+class QSFMLWidget
     : public QWidget,
       public sf::RenderWindow
 {
 public:
-    explicit QSFMLCanvas(QWidget *parent, const QPoint& Position, const QSize& Size, unsigned int FrameTime = 7); //Defauld frame time should give about 144 FPS
+    explicit QSFMLWidget(QWidget *parent, const QPoint& Position, const QSize& Size, unsigned int FrameTime = 7); //Defauld frame time should give about 144 FPS
+    virtual ~QSFMLWidget();
 
     virtual void showEvent(QShowEvent*);
     virtual QPaintEngine* paintEngine() const;
     virtual void paintEvent(QPaintEvent*);
-
-    virtual ~QSFMLCanvas();
 
     virtual void OnInit();
     virtual void OnUpdate(sf::Time frameTime);
@@ -37,11 +36,12 @@ public:
     void keyReleaseEvent(QKeyEvent *event);
 
 private:
+    bool _initialized;
     sf::Clock frameClock;
     QTimer refreshTimer;
-    bool initialized;
 
 protected:
+    const bool & initialized = _initialized;
     void pushEvent(sf::Event & ev);
     std::vector<sf::Event> SfEvents;
 };

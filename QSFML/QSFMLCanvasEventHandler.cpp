@@ -3,7 +3,7 @@
 #include "keyconverter.hpp"
 
 //Mouse events
-void QSFMLCanvas::mousePressEvent(QMouseEvent *e)
+void QSFMLWidget::mousePressEvent(QMouseEvent *e)
 {
     sf::Event ev;
     ev.type = sf::Event::MouseButtonPressed;
@@ -14,7 +14,7 @@ void QSFMLCanvas::mousePressEvent(QMouseEvent *e)
 
     pushEvent(ev);
 }
-void QSFMLCanvas::mouseReleaseEvent(QMouseEvent *e)
+void QSFMLWidget::mouseReleaseEvent(QMouseEvent *e)
 {
     sf::Event ev;
     ev.type = sf::Event::MouseButtonReleased;
@@ -27,7 +27,7 @@ void QSFMLCanvas::mouseReleaseEvent(QMouseEvent *e)
 }
 
 //Keyboard events
-void QSFMLCanvas::keyPressEvent(QKeyEvent *event)
+void QSFMLWidget::keyPressEvent(QKeyEvent *event)
 {
     sf::Event ev;
     ev.type = sf::Event::KeyPressed;
@@ -35,8 +35,7 @@ void QSFMLCanvas::keyPressEvent(QKeyEvent *event)
 
     pushEvent(ev);
 }
-
-void QSFMLCanvas::keyReleaseEvent(QKeyEvent *event)
+void QSFMLWidget::keyReleaseEvent(QKeyEvent *event)
 {
     sf::Event ev;
     ev.type = sf::Event::KeyReleased;

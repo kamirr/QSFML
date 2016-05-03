@@ -5,9 +5,9 @@
     #include <X11/Xlib.h>
 #endif
 
-QSFMLCanvas::QSFMLCanvas(QWidget* Parent, const QPoint& Position, const QSize& Size, unsigned int FrameTime)
+QSFMLWidget::QSFMLWidget(QWidget* Parent, const QPoint& Position, const QSize& Size, unsigned int FrameTime)
     : QWidget(Parent),
-      initialized(false)
+      _initialized(false)
 {
     setAttribute(Qt::WA_PaintOnScreen);
     setAttribute(Qt::WA_OpaquePaintEvent);
@@ -21,10 +21,10 @@ QSFMLCanvas::QSFMLCanvas(QWidget* Parent, const QPoint& Position, const QSize& S
     refreshTimer.setInterval(FrameTime);
     frameClock.restart();
 }
-QSFMLCanvas::~QSFMLCanvas() {}
-void QSFMLCanvas::showEvent(QShowEvent*)
+QSFMLWidget::~QSFMLWidget() {}
+void QSFMLWidget::showEvent(QShowEvent*)
 {
-    if (!initialized)
+    if (!_initialized)
     {
         RenderWindow::create((sf::WindowHandle) winId());
 
@@ -32,24 +32,24 @@ void QSFMLCanvas::showEvent(QShowEvent*)
 
         connect(&refreshTimer, SIGNAL(timeout()), this, SLOT(repaint()));
         refreshTimer.start();
-        initialized = true;
+        _initialized = true;
     }
 }
 
-QPaintEngine* QSFMLCanvas::paintEngine() const
+QPaintEngine* QSFMLWidget::paintEngine() const
 {
     return 0;
 }
-void QSFMLCanvas::paintEvent(QPaintEvent*)
+void QSFMLWidget::paintEvent(QPaintEvent*)
 {
     OnUpdate(frameClock.restart());
     RenderWindow::display();
 }
 
-void QSFMLCanvas::OnInit()                      {} /* TO BE DERIVED */
-void QSFMLCanvas::OnUpdate(sf::Time frameTime)  {} /* TO BE DERIVED */
+void QSFMLWidget::OnInit()                      {} /* TO BE DERIVED */
+void QSFMLWidget::OnUpdate(sf::Time frameTime)  {} /* TO BE DERIVED */
 
-bool QSFMLCanvas::pollEvent(sf::Event& ev)
+bool QSFMLWidget::pollEvent(sf::Event& ev)
 {
     if(SfEvents.size() == 0)
         return false;
@@ -59,7 +59,7 @@ bool QSFMLCanvas::pollEvent(sf::Event& ev)
 
     return true;
 }
-void QSFMLCanvas::pushEvent(sf::Event & ev)
+void QSFMLWidget::pushEvent(sf::Event & ev)
 {
     SfEvents.push_back(ev);
 }
