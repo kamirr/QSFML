@@ -16,6 +16,13 @@ namespace qsf
 
     bool QResourceStream::open(const char* path)
     {
+        if(this->size != 0)
+        {
+            free(dat);
+            this->size = 0;
+            this->pos = 0;
+        }
+
         QFile file(path);
         if(!file.open(QIODevice::ReadOnly))
             return false;
@@ -23,9 +30,13 @@ namespace qsf
         this->size = file.size();
         dat = malloc(file.size());
 
-        file.read((char*) dat, file.size() + 1);
-        file.close();
+        if(dat == NULL)
+            return false;
 
+        if(file.read((char*) dat, file.size() + 1) == -1)
+            return false;
+
+        file.close();
         return true;
     }
 
