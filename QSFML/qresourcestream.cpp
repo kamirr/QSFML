@@ -1,6 +1,5 @@
 #include "qresourcestream.hpp"
 
-#include <iostream>
 namespace qsf
 {
     QResourceStream::QResourceStream()
@@ -42,11 +41,11 @@ namespace qsf
 
     sf::Int64 QResourceStream::read(void *data, sf::Int64 size)
     {
-        sf::Int64 i;
-        for(i = 0; i < size && i + pos < this->size; i++, pos++)
-            ((char*)data)[i] = ((char*)dat)[pos];
+        const auto count = std::min( size, this->size - pos );
+        memcpy( data, static_cast < char *>( dat ) + pos, count );
+        pos += count;
 
-        return i;
+        return count;
     }
     sf::Int64 QResourceStream::seek(sf::Int64 position)
     {
