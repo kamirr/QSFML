@@ -1,5 +1,5 @@
 # QSFML
-Library that integrates SFML 2.x.x and Qt 5.x.x, includes event handling etc.
+Library that integrates SFML 2.x.x and Qt 5.x.x, includes event handling, universal types, useful functions (eg. key code converter) etc.
 
 # Installation
 Simply move QSFML directory to your project, .so binary builds will be available soon.
