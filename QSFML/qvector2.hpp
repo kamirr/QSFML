@@ -19,6 +19,16 @@ namespace qsf
             : sf::Vector2<N>(x, y)
         { }
 
+        QVector2(sf::Vector2<N> vec)
+            : sf::Vector2<N>(vec.x, vec.y)
+        { }
+        QVector2(QPoint Qp)
+            : sf::Vector2<N>(Qp.x, Qp.y)
+        { }
+        QVector2(QSize Qp)
+            : sf::Vector2<N>(Qp.width(), Qp.height())
+        { }
+
         operator QPoint const() { return QPoint(N(this->x), N(this->y)); }
         operator QSize const()  { return QSize(N(this->x),  N(this->y)); }
     };
