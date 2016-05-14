@@ -1,5 +1,7 @@
 *.pro.*
 *.pro
 *.o
+examples
+examples/*
 tests
 tests/*
