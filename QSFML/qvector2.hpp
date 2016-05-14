@@ -23,7 +23,7 @@ namespace qsf
             : sf::Vector2<N>(vec.x, vec.y)
         { }
         QVector2(QPoint Qp)
-            : sf::Vector2<N>(Qp.x, Qp.y)
+            : sf::Vector2<N>(Qp.x(), Qp.y())
         { }
         QVector2(QSize Qp)
             : sf::Vector2<N>(Qp.width(), Qp.height())
