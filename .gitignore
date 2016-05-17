@@ -1,5 +1,3 @@
-*.pro.*
-*.pro
 *.o
 examples
 examples/*
