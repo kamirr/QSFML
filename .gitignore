@@ -4,3 +4,4 @@ moc_*
 ui_*
 Makefile
 *.pro.user
+examples/date/date
