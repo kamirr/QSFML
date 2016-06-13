@@ -1,1 +1,6 @@
 *.o
+qrc_*
+moc_*
+ui_*
+Makefile
+*.pro.user
