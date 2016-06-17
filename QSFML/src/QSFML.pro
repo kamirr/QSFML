@@ -11,11 +11,7 @@ TARGET = QSFML
 INCLUDEPATH += ../include/
 
 QT       += core gui
-
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
-
-# Input
-
 
 LIBS     += -lsfml-graphics -lsfml-window -lsfml-system
 QMAKE_CXXFLAGS += -std=c++11 -Wno-sign-compare
