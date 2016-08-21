@@ -1,3 +1,5 @@
+<img src="https://raw.githubusercontent.com/KoczurekK/QSFML/master/logo/qsfml-original.png" width="300">
+
 # QSFML
 Library that integrates SFML 2.x.x and Qt 5.x.x, includes event handling, universal types, useful functions (eg. key code converter) etc.
 
