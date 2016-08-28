@@ -1,12 +1,12 @@
 /* =========================================================== *
- * QSFML (c) Kamil Koczurek | koczurekk@gmail.com	       *
+ * QSFML (c) Kamil Koczurek | koczurekk@gmail.com              *
  * GNU GPL v3 License http://www.gnu.org/licenses/gpl-3.0.html *
  * =========================================================== */
 
 #ifndef QRESOURCESTREAM_H
 #define QRESOURCESTREAM_H
 
-#include <SFML/System.hpp>
+#include <SFML/System/InputStream.hpp>
 #include <QFile>
 
 namespace qsf

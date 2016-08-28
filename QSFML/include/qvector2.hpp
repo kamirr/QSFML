@@ -1,5 +1,5 @@
 /* =========================================================== *
- * QSFML (c) Kamil Koczurek | koczurekk@gmail.com	       *
+ * QSFML (c) Kamil Koczurek | koczurekk@gmail.com              *
  * GNU GPL v3 License http://www.gnu.org/licenses/gpl-3.0.html *
  * =========================================================== */
 
@@ -38,9 +38,9 @@ namespace qsf
         operator QSize const()  { return QSize(N(this->x),  N(this->y)); }
     };
 
-    typedef QVector2<int> QVector2i;
-    typedef QVector2<unsigned int> QVector2u;
-    typedef QVector2<float> QVector2f;
+	typedef QVector2<int>			QVector2i;
+	typedef QVector2<unsigned int>	QVector2u;
+	typedef QVector2<float>			QVector2f;
 
 }
 #endif // QVECTOR2_HPP
