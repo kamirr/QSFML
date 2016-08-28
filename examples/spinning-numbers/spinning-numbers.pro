@@ -1,8 +1,10 @@
-#-------------------------------------------------
-#
-# Project created by QtCreator 2016-05-02T12:52:23
-#
-#-------------------------------------------------
+# =========================================================== #
+# QSFML (c) Kamil Koczurek | koczurekk@gmail.com	      	  #
+# GNU GPL v3 License http://www.gnu.org/licenses/gpl-3.0.html #
+# =========================================================== #
+
+DESTDIR=build
+OBJECTS_DIR=build/obj
 
 QT       += core gui
 LIBS     += -lsfml-graphics -lsfml-window -lsfml-system -lQSFML
