@@ -7,28 +7,50 @@
 #define STRING_H
 
 #include <SFML/System/String.hpp>
+#include <iostream>
 #include <QString>
+namespace qsf {
+	class String
+	: public QString {
+	public:
+		/* Quite universal constructor */
+		template<typename T>
+		String(T obj)
+		: QString(obj)
+		{ }
 
-namespace qsf
-{
-    class String
-        : public QString
-    {
-    public:
-        template<typename T>
-        String(T obj)
-            : QString(obj)
-        { }
+		/* Constructor taking std::string */
+		String(std::string obj)
+		: QString(obj.c_str())
+		{ }
 
-        template<typename T>
-        static String number(T num)
-        {
-            return String(QString::number(num));
-        }
+		/* Constructor taking SFML string */
+		String(sf::String str);
 
-        String arg(String str);
-        String(sf::String str);
-        operator sf::String const();
-    };
+		/* Overload 'number' method from QString,
+		 * so it could return qsf::String*/
+		template<typename T>
+		static String number(T num) {
+			return String(QString::number(num));
+		}
+
+		/* Overload 'arg' method from QString,
+		 * so it could return qsf::String + adds
+		 * overloads for qsf::String and sf::String*/
+		template<typename T>
+		String arg(T var) const {
+			return String(static_cast<const QString*>(this)->arg(var));
+		}
+		String arg(sf::String str) const;
+		String arg(String str) const;
+
+		/* Enable casting to sf::String */
+		operator sf::String const();
+
+		/* Implement std::cout (std::ofstream etc. too) support */
+		friend std::ostream& operator <<(std::ostream& out, const String& string) {
+			return out << string.toStdString();
+		}
+	};
 }
 #endif // STRING_H
