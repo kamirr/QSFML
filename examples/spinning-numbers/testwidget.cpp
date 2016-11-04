@@ -29,7 +29,13 @@ void TestWidget::OnInit()
 
 void TestWidget::OnUpdate()
 {
+	/* Match widget size with window size */
 	setSize(qsf::QVector2u(((QWidget*) parent())->size()));
+	for(sf::Event ev; this->pollEvent(ev);) {
+		if(ev.type == sf::Event::Resized) {
+			std::cout << "Resized: [" << ev.size.width << "; " << ev.size.height << "]" << std::endl;
+		}
+	}
 
 	clear({0, 0, 0});
 

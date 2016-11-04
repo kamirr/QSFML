@@ -1,12 +1,16 @@
 #ifndef TESTWIDGET_H
 #define TESTWIDGET_H
 
-#include <SFML/Graphics.hpp>
 #include <QSFML/qresourcestream.hpp>
 #include <QSFML/QSFMLCanvas.hpp>
 #include <QSFML/qvector2.hpp>
 #include <QSFML/string.hpp>
+
+#include <SFML/Graphics/Font.hpp>
+#include <SFML/Graphics/Text.hpp>
+
 #include <QMainWindow>
+#include <iostream>
 
 class TestWidget
 : public qsf::QSFMLWidget
