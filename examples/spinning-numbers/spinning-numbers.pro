@@ -7,10 +7,8 @@ DESTDIR=build
 OBJECTS_DIR=build/obj
 
 QT       += core gui
-LIBS     += -lsfml-graphics -lsfml-window -lsfml-system -lQSFML
-QMAKE_CXXFLAGS += -std=c++11 -Wno-sign-compare
-
-INCLUDEPATH += /usr/include
+LIBS     += -lsfml-graphics-d -lsfml-window-d -lsfml-system-d -lQSFML
+QMAKE_CXXFLAGS += -std=c++11 -Wno-sign-compare -g
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 

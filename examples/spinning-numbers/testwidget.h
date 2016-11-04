@@ -1,6 +1,7 @@
 #ifndef TESTWIDGET_H
 #define TESTWIDGET_H
 
+#include <SFML/Graphics.hpp>
 #include <QSFML/qresourcestream.hpp>
 #include <QSFML/QSFMLCanvas.hpp>
 #include <QSFML/qvector2.hpp>
@@ -8,33 +9,32 @@
 #include <QMainWindow>
 
 class TestWidget
-        : public qsf::QSFMLWidget
+: public qsf::QSFMLWidget
 {
-    Q_OBJECT
+	Q_OBJECT
 
 public:
-    TestWidget(QMainWindow* Parent, const QPoint& Position, const QSize& Size);
-    ~TestWidget();
+	TestWidget(QMainWindow* Parent, const QPoint& Position, const QSize& Size);
+	~TestWidget();
 
-    void OnInit();
-    void OnUpdate();
+	void OnInit();
+	void OnUpdate();
 
 private:
-    qsf::QResourceStream fontStream;
+	qsf::QResourceStream fontStream;
 
-    void* fontDat;
-    size_t fontSize;
+	size_t fontSize;
 
-    sf::Font bitFont;
-    sf::Text bitText;
+	sf::Font bitFont;
+	sf::Text bitText;
 
-    float TextColorR;
-    float TextColorG;
+	float TextColorR;
+	float TextColorG;
 
-    int colorModR;
-    int colorModG;
+	int colorModR;
+	int colorModG;
 
-    int counter;
+	int counter;
 };
 
 #endif // TESTWIDGET_H
