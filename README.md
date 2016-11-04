@@ -1,7 +1,7 @@
 <img src="https://raw.githubusercontent.com/KoczurekK/QSFML/master/logo/qsfml-original.png" width="300">
 
 # QSFML
-Library that integrates SFML 2.3.x (2.4.0 couses yet unsolved problem) and Qt 5.x.x, includes event handling, universal types, useful functions (eg. key code converter) etc.
+Library that integrates SFML 2.3.x; 2.4.1+ (2.4.0 causes a X11-related problem) and Qt 5, includes event handling, universal types, useful functions (eg. key code converter) etc.
 
 # Installation
 ## Source code
