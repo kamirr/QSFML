@@ -1,6 +1,9 @@
 #ifndef DATEWIDGET_H
 #define DATEWIDGET_H
 
+#include <SFML/Graphics/Font.hpp>
+#include <SFML/Graphics/Text.hpp>
+
 #include <QSFML/qresourcestream.hpp>
 #include <QSFML/QSFMLCanvas.hpp>
 #include <QSFML/qvector2.hpp>
@@ -10,16 +13,24 @@
 class DateWidget
     : public qsf::QSFMLWidget
 {
-    qsf::QResourceStream fontStream;
-    qsf::QVector2i widgetSize;
-    sf::Font font;
-    sf::Text text;
+	/* Stream loading data from QResource */
+	qsf::QResourceStream fontStream;
+
+	/* Needed to locate text */
+	qsf::QVector2i widgetSize;
+
+	/* Text & font */
+	sf::Font font;
+	sf::Text text;
 
 public:
-    DateWidget(QWidget *parent, const QPoint& Position, const QSize& Size);
+	DateWidget(QWidget *parent, const QPoint& Position, const QSize& Size);
 
-    void OnInit();
-    void OnUpdate();
+	/* Called on init */
+	virtual void OnInit();
+
+	/* Called on update */
+	virtual void OnUpdate();
 };
 
 #endif // DATEWIDGET_H
