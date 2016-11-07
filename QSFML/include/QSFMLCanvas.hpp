@@ -3,6 +3,29 @@
  * GNU GPL v3 License http://www.gnu.org/licenses/gpl-3.0.html *
  * =========================================================== */
 
+/*! \mainpage QSFML
+ *
+ * \section About
+ *
+ * Library that integrates SFML 2.3.x; 2.4.1+ (2.4.0 causes a X11-related problem) and Qt 5, includes event handling, universal types, useful functions (eg. key code converter) etc.
+ *
+ * \section Installation
+ * \subsection Compile
+ *   - git clone https://github.com/KoczurekK/QSFML.git
+ *   - cd QSFML/QSFML/src
+ *   - qmake
+ *   - make
+ * \subsection Deb packages
+ * Download .deb packages from leatest github release and install using dpkg/apt etc.
+ *
+ * \section Usage
+ * All header files are in QSFML subdirectory, include useful ones and remember to link with -lQSFML.
+ *
+ * \section Origins
+ * Basic code, on top of which im writing QSFML, was created by "jueves", you can find original post <a href=" http://becomingindiedev.blogspot.com/2013/10/qt-5-and-sfml-20-integration.html">here</a>
+ */
+
+
 #ifndef QSFMLCANVAS_H
 #define QSFMLCANVAS_H
 
@@ -16,6 +39,7 @@
 #include <QWidget>
 #include <QTimer>
 
+//! \brief Namespace containing all qsf classes and methods.
 namespace qsf {
 	class QSFMLWidget
 	: public QWidget,
