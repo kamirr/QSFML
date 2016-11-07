@@ -64,7 +64,10 @@ namespace qsf
 	void QSFMLWidget::resizeEvent(QResizeEvent *event) {
 		sf::Event ev;
 		ev.type = sf::Event::Resized;
-		ev.size = { event->size().width(), event->size().height() };
+		ev.size = {
+			static_cast<unsigned int>(event->size().width()),
+			static_cast<unsigned int>(event->size().height())
+		};
 
 		pushEvent(ev);
 	}
