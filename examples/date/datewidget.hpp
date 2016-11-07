@@ -9,6 +9,7 @@
 #include <QSFML/qvector2.hpp>
 #include <QSFML/string.hpp>
 #include <QDateTime>
+#include <iostream>
 
 class DateWidget
     : public qsf::QSFMLWidget
@@ -25,12 +26,19 @@ class DateWidget
 
 public:
 	DateWidget(QWidget *parent, const QPoint& Position, const QSize& Size);
+	virtual ~DateWidget() {
+		/* Half-explicit call is required to use OnDestroy method */
+		OnDestroy();
+	}
 
 	/* Called on init */
 	virtual void OnInit();
 
 	/* Called on update */
 	virtual void OnUpdate();
+
+	/* Called when widget is being destroyed */
+	virtual void OnDestroy();
 };
 
 #endif // DATEWIDGET_H

@@ -5,8 +5,7 @@ DateWidget::DateWidget(QWidget *parent, const QPoint &Position, const QSize &Siz
 	  widgetSize(Size)
 { }
 
-void DateWidget::OnInit()
-{
+void DateWidget::OnInit() {
 	/* Load font from QResourceStream */
     font.loadFromStream(fontStream("://BitFont.ttf"));
 
@@ -16,8 +15,7 @@ void DateWidget::OnInit()
 	text.setFillColor({20, 240, 20});
 }
 
-void DateWidget::OnUpdate()
-{
+void DateWidget::OnUpdate() {
 	/* Catch up with widget size */
 	sf::RenderWindow::setSize(qsf::QVector2u(static_cast<QWidget*>(QWidget::parent())->size()));
 
@@ -40,4 +38,9 @@ void DateWidget::OnUpdate()
 
 	/* Draw text */
     draw(text);
+}
+
+void DateWidget::OnDestroy() {
+	/* Print msg */
+	std::cout << "\"You killed me!\"\n   ~" << std::hex << static_cast<void*>(this) << std::endl;
 }
