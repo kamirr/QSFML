@@ -32,6 +32,7 @@ namespace qsf
 
 		virtual void OnInit();
 		virtual void OnUpdate();
+		virtual void OnDestroy();
 
 		bool pollEvent(sf::Event & ev);
 

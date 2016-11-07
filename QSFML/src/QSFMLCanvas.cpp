@@ -14,8 +14,7 @@ namespace qsf
 {
     QSFMLWidget::QSFMLWidget(QWidget* Parent, const QPoint& Position, const QSize& Size, unsigned int FrameTime)
         : QWidget(Parent),
-          _initialized(false)
-    {
+		  _initialized(false) {
         setAttribute(Qt::WA_PaintOnScreen);
         setAttribute(Qt::WA_OpaquePaintEvent);
         setAttribute(Qt::WA_NoSystemBackground);
@@ -28,10 +27,13 @@ namespace qsf
         refreshTimer.setInterval(FrameTime);
         frameClock.restart();
     }
-    QSFMLWidget::~QSFMLWidget() {}
-    void QSFMLWidget::showEvent(QShowEvent*)
-    {
-        if (!_initialized)
+	QSFMLWidget::~QSFMLWidget() {
+		OnDestroy();
+	}
+
+
+	void QSFMLWidget::showEvent(QShowEvent*) {
+		if (!_initialized)
         {
             RenderWindow::create((sf::WindowHandle) winId());
 
@@ -43,12 +45,10 @@ namespace qsf
         }
     }
 
-    QPaintEngine* QSFMLWidget::paintEngine() const
-    {
+	QPaintEngine* QSFMLWidget::paintEngine() const {
         return 0;
     }
-    void QSFMLWidget::paintEvent(QPaintEvent*)
-    {
+	void QSFMLWidget::paintEvent(QPaintEvent*) {
         _frameTime = frameClock.restart();
         OnUpdate();
         RenderWindow::display();
@@ -56,14 +56,14 @@ namespace qsf
 
     void QSFMLWidget::OnInit()    {} /* TO BE DERIVED */
     void QSFMLWidget::OnUpdate()  {} /* TO BE DERIVED */
+	void QSFMLWidget::OnDestroy() {} /* TO BE DERIVED */
 
-    bool QSFMLWidget::pollEvent(sf::Event& ev)
-    {
-        if(SfEvents.size() == 0)
+	bool QSFMLWidget::pollEvent(sf::Event& ev) {
+		if(SfEvents.size() == 0)
             return false;
 
-        ev = *(SfEvents.end() - 1);
-        SfEvents.erase(SfEvents.end() - 1);
+		ev = SfEvents.back();
+		SfEvents.pop_back();
 
         return true;
     }
