@@ -5,8 +5,7 @@
 
 #include "string.hpp"
 
-namespace qsf
-{
+namespace qsf {
 	String::String(sf::String str)
 	: QString(str.toAnsiString().c_str())
 	{ }

@@ -7,8 +7,7 @@
 #include <SFML/System.hpp>
 #include "keyconverter.hpp"
 
-namespace qsf
-{
+namespace qsf {
 	//Mouse buttons events
 	void QSFMLWidget::mousePressEvent(QMouseEvent *e) {
 		sf::Event ev;

@@ -1,5 +1,5 @@
 /* =========================================================== *
- * QSFML (c) Kamil Koczurek | koczurekk@gmail.com              *
+ * QSFML (c) Kamil Koczurek | koczurekk@gmail.com			  *
  * GNU GPL v3 License http://www.gnu.org/licenses/gpl-3.0.html *
  * =========================================================== */
 
@@ -16,12 +16,10 @@
 #include <QWidget>
 #include <QTimer>
 
-namespace qsf
-{
+namespace qsf {
 	class QSFMLWidget
 	: public QWidget,
-	public sf::RenderWindow
-	{
+	public sf::RenderWindow {
 	public:
 		explicit QSFMLWidget(QWidget *parent, const QPoint& Position, const QSize& Size, unsigned int FrameTime = 7); //Defauld frame time should give about 144 FPS
 		virtual ~QSFMLWidget();
