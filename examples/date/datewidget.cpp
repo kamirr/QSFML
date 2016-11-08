@@ -19,6 +19,12 @@ void DateWidget::OnUpdate() {
 	/* Catch up with widget size */
 	sf::RenderWindow::setSize(qsf::QVector2u(static_cast<QWidget*>(QWidget::parent())->size()));
 
+	for(sf::Event ev; this->pollEvent(ev);) {
+		if(ev.type == sf::Event::MouseButtonPressed) {
+			std::cout << "Click: [" << ev.mouseButton.x << ", " << ev.mouseButton.y << "]" << std::endl;
+		}
+	}
+
 	/* Get & update view */
 	sf::View view = this->getDefaultView();
 	view.setSize({
