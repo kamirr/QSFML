@@ -63,4 +63,18 @@ namespace qsf {
 		open(path);
 		return *this;
 	}
+
+	std::ostream& operator <<(std::ostream& out, QResourceStream& resource) {
+		char* data = new char[resource.getSize()];
+
+		auto oldPos = resource.tell();
+		resource.seek(0);
+		resource.read(data, resource.getSize());
+		resource.seek(oldPos);
+
+		out << data << std::endl;
+
+		delete data;
+		return out;
+	}
 }

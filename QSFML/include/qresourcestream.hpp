@@ -9,6 +9,7 @@
 #define QRESOURCESTREAM_H
 
 #include <SFML/System/InputStream.hpp>
+#include <ostream>
 #include <QFile>
 
 namespace qsf {
@@ -83,6 +84,18 @@ namespace qsf {
 		//! So you don't need to declare many instances of QResourceStream.
 		QResourceStream & operator()(const char* path);
 
+		//! \brief Prints whole file
+		//!
+		//! Allows printing file to std::ostream.\n
+		//! Sample usage:
+		//! \code{.cpp}
+		//! QResourceStream resource;
+		//! if(!resource.open("://BuiltInFile.txt")) {
+		//!		std::cerr << "Could not read resource!" << std::endl;
+		//! } else {
+		//!		std::cout << "Content:" << std::endl << resource << std::endl;
+		//! }
+		friend std::ostream& operator <<(std::ostream& out, QResourceStream& resource);
 	private:
 		void * dat;
 		sf::Int64 pos;
