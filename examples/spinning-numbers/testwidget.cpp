@@ -17,6 +17,13 @@ TestWidget::~TestWidget()
 
 void TestWidget::OnInit()
 {
+	qsf::QResourceStream msgStream;
+	if(msgStream.open("://msg.txt")) {
+		std::cout << msgStream << std::endl;
+	} else {
+		std::cerr << "Could not open resource!" << std::endl;
+	}
+
 	bitFont.loadFromStream(fontStream("://BitFont.ttf"));
 
 	bitText.setFont(bitFont);

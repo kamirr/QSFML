@@ -1,0 +1,5 @@
+This is a sample message.
+Well, it's multi-line message.
+
+And it uses some magical characters: πœęźćż.
+Wow.
