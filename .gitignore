@@ -8,3 +8,4 @@ examples/date/date
 QSFML/doxygen/
 QSFML/src/.qmake.stash
 QSFML/src/build/
+QSFML/build-*
