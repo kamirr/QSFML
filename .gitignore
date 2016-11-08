@@ -5,3 +5,6 @@ ui_*
 Makefile
 *.pro.user
 examples/date/date
+QSFML/doxygen/
+QSFML/src/.qmake.stash
+QSFML/src/build/
