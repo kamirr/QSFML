@@ -35,9 +35,7 @@ namespace qsf {
 		//! \param [in] obj – std::string instance
 		//!
 		//! Allows initializing String using std::string object.
-		String(std::string obj)
-		: QString(obj.c_str())
-		{ }
+		String(std::string obj);
 
 		//! \brief sf::String constructor
 		//!

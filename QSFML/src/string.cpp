@@ -6,6 +6,10 @@
 #include "string.hpp"
 
 namespace qsf {
+	String::String(std::string obj)
+	: QString(obj.c_str())
+	{ }
+
 	String::String(sf::String str)
 	: QString(str.toAnsiString().c_str())
 	{ }
