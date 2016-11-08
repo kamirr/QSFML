@@ -5,15 +5,15 @@ Library that integrates SFML 2.3.x; 2.4.1+ (2.4.0 causes a X11-related problem) 
 
 # Installation
 ## Source code
+
+```
 $ git clone https://github.com/KoczurekK/QSFML.git
-
 $ cd QSFML/QSFML/src
-
 $ qmake
-
 $ make
+```
 
-Then copy .dll/.so and include directory wherever you want to. 
+Then copy .dll/.so and include directory wherever you want to.
 
 ## Deb packages
 Download .deb packages from last release and install them.
