@@ -16,14 +16,14 @@ namespace qsf {
 	}
 
 	bool QResourceStream::open(const char* path) {
-		if(this->size != 0)
-		{
-			free(dat);
+		if(this->size != 0) {
 			this->size = 0;
 			this->pos = 0;
+			free(dat);
 		}
 
-		QFile file(path);
+		static QFile file;
+		file.setFileName(path);
 		if(!file.open(QIODevice::ReadOnly))
 			return false;
 
@@ -65,16 +65,6 @@ namespace qsf {
 	}
 
 	std::ostream& operator <<(std::ostream& out, QResourceStream& resource) {
-		char* data = new char[resource.getSize()];
-
-		auto oldPos = resource.tell();
-		resource.seek(0);
-		resource.read(data, resource.getSize());
-		resource.seek(oldPos);
-
-		out << data << std::endl;
-
-		delete data;
-		return out;
+		return out << static_cast<char*>(resource.dat);
 	}
 }
