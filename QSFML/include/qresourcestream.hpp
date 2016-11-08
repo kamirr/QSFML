@@ -95,6 +95,7 @@ namespace qsf {
 		//! } else {
 		//!		std::cout << "Content:" << std::endl << resource << std::endl;
 		//! }
+		//! \endcode
 		friend std::ostream& operator <<(std::ostream& out, QResourceStream& resource);
 	private:
 		void * dat;
