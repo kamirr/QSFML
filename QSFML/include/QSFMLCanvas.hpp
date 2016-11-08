@@ -119,7 +119,30 @@ namespace qsf {
 		//! \endcode
 		virtual void OnDestroy();
 
+		//! \brief Get event
+		//!
+		//! \param [out] ev – non-const reference to event
+		//!
+		//! \return True if there was event to use, False otherwise
+		//!
+		//! Checks if in the queue (actually vector) is any event, if no – returns false, otherwise copies event to given &ev and returns true.\n
+		//! Sample usage:
+		//! \code{.cpp}
+		//! for(sf::Event ev; this->pollEvent(ev);){
+		//!		if(ev.type == sf::Event::KeyPressed) {
+		//!			std::cout << "Key pressed!" << std::endl;
+		//!		}
+		//!		// Handle other events
+		//! }
+		//! \endcode
 		bool pollEvent(sf::Event & ev);
+
+	private:
+		bool _initialized;
+		QTimer refreshTimer;
+		sf::Time _frameTime;
+		sf::Clock frameClock;
+		std::vector<sf::Event> SfEvents;
 
 		/* =============== *
 		 * EVENTS HANDLING *
@@ -138,18 +161,28 @@ namespace qsf {
 		//Resize event
 		void resizeEvent(QResizeEvent *event);
 
-	private:
-		bool _initialized;
-		QTimer refreshTimer;
-		sf::Time _frameTime;
-		sf::Clock frameClock;
-
 	protected:
+		//! \brief Is initialized?
+		//!
+		//! \deprecated Reference is invalid after copying QSFMLWidget
+		//!
+		//! Const, read-only reference to private member, informing wether widget was already initialized or not.
 		const bool & initialized = _initialized;
+
+		//! \brief Frame delta time
+		//!
+		//! \deprecated Reference is invalid after copying QSFMLWidget
+		//!
+		//! Informs about last frame duration, required to move object smoothly etc.
 		const sf::Time & frameTime = _frameTime;
 
+		//! \brief Push event to queue
+		//!
+		//! \param [in] ev – Reference to event that will be pushed to the queue
+		//!
+		//! Copies given event to the end of queue (aka vector), use only if you have some specific source of events, eg. when you want to
+		//! receive them from network etc.
 		void pushEvent(sf::Event & ev);
-		std::vector<sf::Event> SfEvents;
 	};
 }
 #endif // QSMLCANVAS_H
