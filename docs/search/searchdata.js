@@ -3,13 +3,12 @@ var indexSectionsWithContent =
   0: "adfgiknopqrst~",
   1: "qs",
   2: "q",
-  3: "kqs",
+  3: "kq",
   4: "agnopqrst~",
   5: "fi",
   6: "q",
   7: "o",
-  8: "k",
-  9: "dq"
+  8: "dq"
 };
 
 var indexSectionNames =
@@ -22,8 +21,7 @@ var indexSectionNames =
   5: "variables",
   6: "typedefs",
   7: "related",
-  8: "defines",
-  9: "pages"
+  8: "pages"
 };
 
 var indexSectionLabels =
@@ -36,7 +34,6 @@ var indexSectionLabels =
   5: "Variables",
   6: "Typedefs",
   7: "Friends",
-  8: "Macros",
-  9: "Pages"
+  8: "Pages"
 };
 
