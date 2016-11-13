@@ -66,8 +66,15 @@ namespace qsf {
 
 		return true;
 	}
-	void QSFMLWidget::pushEvent(sf::Event & ev)
-	{
+	void QSFMLWidget::pushEvent(sf::Event & ev) {
 		SfEvents.push_back(ev);
+	}
+
+	bool QSFMLWidget::isInitialized() {
+		return this->_initialized;
+	}
+
+	sf::Time QSFMLWidget::getDeltaTime() {
+		return this->_frameTime;
 	}
 }

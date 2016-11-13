@@ -164,17 +164,13 @@ namespace qsf {
 	protected:
 		//! \brief Is initialized?
 		//!
-		//! \deprecated Reference is invalid after copying QSFMLWidget
-		//!
-		//! Const, read-only reference to private member, informing wether widget was already initialized or not.
-		const bool & initialized = _initialized;
+		//! Returns wether widget was already initialized or not.
+		bool isInitialized();
 
 		//! \brief Frame delta time
 		//!
-		//! \deprecated Reference is invalid after copying QSFMLWidget
-		//!
-		//! Informs about last frame duration, required to move object smoothly etc.
-		const sf::Time & frameTime = _frameTime;
+		//! Returns last frame duration, required to move object smoothly etc.
+		sf::Time getDeltaTime();
 
 		//! \brief Push event to queue
 		//!
