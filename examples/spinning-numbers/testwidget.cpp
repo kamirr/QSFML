@@ -46,7 +46,7 @@ void TestWidget::OnUpdate()
 
 	clear({0, 0, 0});
 
-	float seconds = frameTime.asSeconds();
+	float seconds = this->getDeltaTime().asSeconds();
 
 	TextColorR += seconds * 27.f * colorModR;
 	TextColorG += seconds * 31.f * colorModG;
