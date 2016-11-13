@@ -46,7 +46,7 @@ namespace qsf {
 	//! \class QSFMLWidget
 	//! \brief Qt widget used as SFML window
 	//!
-	//! This class inherits sf::InputStream and sf::RenderWindow, so sometimes you have to specify with methods you want to use as some of them (eg. setSize) coexist in both.
+	//! This class inherits QWidget and sf::RenderWindow, so sometimes you have to specify with methods you want to use as some of them (eg. setSize) coexist in both.
 	//! You can use this class to move your SFML apps into Qt widget without too big changes in code.
 	class QSFMLWidget
 	: public QWidget,
