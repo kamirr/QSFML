@@ -1,12 +1,18 @@
 var searchData=
 [
-  ['ondestroy',['OnDestroy',['../classqsf_1_1QSFMLWidget.html#ae4eac0813b72d6464d7ab5ffd55c8fed',1,'qsf::QSFMLWidget']]],
-  ['oninit',['OnInit',['../classqsf_1_1QSFMLWidget.html#a7d8337cc6e15c1bb7fa201f0ce36fd5f',1,'qsf::QSFMLWidget']]],
-  ['onupdate',['OnUpdate',['../classqsf_1_1QSFMLWidget.html#abe69246689f5ec8df0e13107f62a9478',1,'qsf::QSFMLWidget']]],
-  ['open',['open',['../classqsf_1_1QResourceStream.html#aac0cb17424e6134acfbc9d842b37dfe8',1,'qsf::QResourceStream']]],
-  ['operator_20qpoint_20const',['operator QPoint const',['../classqsf_1_1QVector2.html#a189b45a13697dd9fee19cdddd98b032c',1,'qsf::QVector2']]],
-  ['operator_20qsize_20const',['operator QSize const',['../classqsf_1_1QVector2.html#a3ce844eb1247aa802bf4862a67d77f0d',1,'qsf::QVector2']]],
-  ['operator_28_29',['operator()',['../classqsf_1_1QResourceStream.html#a7708d45fd53fc0f1946f08077c88d24b',1,'qsf::QResourceStream']]],
-  ['operator_3c_3c',['operator&lt;&lt;',['../classqsf_1_1QResourceStream.html#a037958395778e9bb53aaaddacb049a5d',1,'qsf::QResourceStream::operator&lt;&lt;()'],['../classqsf_1_1String.html#aa4feca04e7bb4aa7fb79d5d80f1378a6',1,'qsf::String::operator&lt;&lt;()'],['../namespaceqsf.html#afa4f06ca6f6e72f7370c4a0c14ecabfb',1,'qsf::operator&lt;&lt;()']]],
-  ['string_20const',['String const',['../classqsf_1_1String.html#aa6441e0084defe2eff144a09dd248561',1,'qsf::String']]]
+  ['qsfml',['QSFML',['../index.html',1,'']]],
+  ['qresourcestream',['QResourceStream',['../classqsf_1_1QResourceStream.html#addfbb80ca88c26cc283d5d0d1fcb5a16',1,'qsf::QResourceStream']]],
+  ['qresourcestream',['QResourceStream',['../classqsf_1_1QResourceStream.html',1,'qsf']]],
+  ['qresourcestream_2ehpp',['qresourcestream.hpp',['../qresourcestream_8hpp.html',1,'']]],
+  ['qsf',['qsf',['../namespaceqsf.html',1,'']]],
+  ['qsfmlcanvas_2ehpp',['QSFMLCanvas.hpp',['../QSFMLCanvas_8hpp.html',1,'']]],
+  ['qsfmlwidget',['QSFMLWidget',['../classqsf_1_1QSFMLWidget.html',1,'qsf']]],
+  ['qsfmlwidget',['QSFMLWidget',['../classqsf_1_1QSFMLWidget.html#a1242828e3c69bf7f57af88f919f5572b',1,'qsf::QSFMLWidget']]],
+  ['qtkeytosfml',['QtKeyToSFML',['../namespaceqsf.html#a112c4ed8b0d7decd581a45f348b154c9',1,'qsf']]],
+  ['qvector2',['QVector2',['../classqsf_1_1QVector2.html#a373e6720910e9513a5ea79f3379178f5',1,'qsf::QVector2::QVector2()'],['../classqsf_1_1QVector2.html#a078b032de247ceaedf70c400e845ec04',1,'qsf::QVector2::QVector2(N x, N y)'],['../classqsf_1_1QVector2.html#a452e969747a104b76809b0478380286e',1,'qsf::QVector2::QVector2(sf::Vector2&lt; N &gt; vec)'],['../classqsf_1_1QVector2.html#ad7ac7dc648c36cf83da575908a643d68',1,'qsf::QVector2::QVector2(QPoint Qp)'],['../classqsf_1_1QVector2.html#ab9f579f25a58b72d00e9f91cdbb83f41',1,'qsf::QVector2::QVector2(QSize Qp)']]],
+  ['qvector2',['QVector2',['../classqsf_1_1QVector2.html',1,'qsf']]],
+  ['qvector2_2ehpp',['qvector2.hpp',['../qvector2_8hpp.html',1,'']]],
+  ['qvector2f',['QVector2f',['../namespaceqsf.html#a168d33c39d41ae458693697954703742',1,'qsf']]],
+  ['qvector2i',['QVector2i',['../namespaceqsf.html#a700396e63493d4c8e8d43f022d490f2f',1,'qsf']]],
+  ['qvector2u',['QVector2u',['../namespaceqsf.html#a7840acf0eb63d61ef1e5d713eb5ef7d3',1,'qsf']]]
 ];

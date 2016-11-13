@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['frametime',['frameTime',['../classqsf_1_1QSFMLWidget.html#ab3ea8e7ce546da3138574a9183f572d0',1,'qsf::QSFMLWidget']]]
+  ['isinitialized',['isInitialized',['../classqsf_1_1QSFMLWidget.html#a71ad2773336bcbc83c2aca351707b909',1,'qsf::QSFMLWidget']]]
 ];
