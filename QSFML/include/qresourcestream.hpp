@@ -78,7 +78,7 @@ namespace qsf {
 		//!
 		//! /* Other code */
 		//!
-		//! someSprite.loadFromStream(resource("://BitFont.ttf"));
+		//! someTexture.loadFromStream(resource("://BitTexture.png"));
 		//! someMusic.loadFromStream(resource("://BitMusic.wav"));
 		//! \endcode
 		//! So you don't need to declare many instances of QResourceStream.
