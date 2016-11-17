@@ -13,10 +13,28 @@ namespace qsf {
 	class Image
 	: public sf::Image {
 	public:
+		//! \brief Default constructor
+		//!
+		//! Calls sf::Image's default constructor.
 		Image();
+
+		//! \brief Constructor taking reference to QImage
+		//!
+		//! \param [in] qImg – reference to QImage
+		//!
+		//! Calls loadFromQImage(img) to create qsf::Image.
 		Image(QImage& qImg);
 
+		//! \brief Converts to QImage
+		//!
+		//! Creates QImage using sf::Image data, way faster than creating qsf::Image from QImage, as sf::Image always uses RGBA8888 format.
 		QImage asQImage();
+
+		//! \brief Load image from QImage
+		//!
+		//! \param [in] qImg – const reference to QImage
+		//!
+		//! Creates qsf::Image using QImage's data, slow as it has to copy QImage (to ensure, that it has proper format) and then copies it again into sf::Image backend.
 		void loadFromQImage(const QImage& qImg);
 	};
 }
