@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['number',['number',['../classqsf_1_1String.html#a52d3e972f28b734bbf2e70f07310f6aa',1,'qsf::String']]]
+  ['loadfromqimage',['loadFromQImage',['../classqsf_1_1Image.html#a4e2d1e123eaee27209ab5d8f1cbd0591',1,'qsf::Image']]]
 ];
