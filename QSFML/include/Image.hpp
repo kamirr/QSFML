@@ -20,10 +20,10 @@ namespace qsf {
 
 		//! \brief Constructor taking reference to QImage
 		//!
-		//! \param [in] qImg – reference to QImage
+		//! \param [in] qImg – const reference to QImage
 		//!
 		//! Calls loadFromQImage(img) to create qsf::Image.
-		Image(QImage& qImg);
+		Image(const QImage& qImg);
 
 		//! \brief Converts to QImage
 		//!
