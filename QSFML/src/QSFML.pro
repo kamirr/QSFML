@@ -21,11 +21,13 @@ SOURCES += \
 	qresourcestream.cpp \
 	QSFMLCanvas.cpp \
 	QSFMLCanvasEventHandler.cpp \
-	string.cpp
+	string.cpp \
+	Image.cpp
 
 HEADERS += \
 	../include/keyconverter.hpp \
 	../include/qresourcestream.hpp \
 	../include/QSFMLCanvas.hpp \
 	../include/qvector2.hpp \
-	../include/string.hpp
+	../include/string.hpp \
+	../include/Image.hpp
