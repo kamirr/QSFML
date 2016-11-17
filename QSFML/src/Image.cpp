@@ -5,7 +5,7 @@ namespace qsf {
 	: sf::Image()
 	{ }
 
-	Image::Image(QImage& qImg) {
+	Image::Image(const QImage &qImg) {
 		this->loadFromQImage(qImg);
 	}
 
