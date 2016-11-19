@@ -1,3 +1,10 @@
+/* =========================================================== *
+ * QSFML (c) Kamil Koczurek | koczurekk@gmail.com              *
+ * GNU GPL v3 License http://www.gnu.org/licenses/gpl-3.0.html *
+ * =========================================================== */
+//! @file
+//! File containing qsf::Image class declaration
+
 #ifndef QSF_IMAGE_HPP
 #define QSF_IMAGE_HPP
 
