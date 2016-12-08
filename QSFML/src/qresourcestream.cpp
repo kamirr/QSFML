@@ -61,8 +61,6 @@ namespace qsf {
 	}
 
 	QResourceStream & QResourceStream::operator()(const char* path) {
-		qDebug() << *this;
-
 		open(path);
 		return *this;
 	}
