@@ -84,7 +84,7 @@ namespace qsf {
 		//! So you don't need to declare many instances of QResourceStream.
 		QResourceStream & operator()(const char* path);
 
-		//! \brief Prints whole file
+		//! \brief Prints whole file (std::ostream)
 		//!
 		//! Allows printing file to std::ostream.\n
 		//! Sample usage:
@@ -97,6 +97,21 @@ namespace qsf {
 		//! }
 		//! \endcode
 		friend std::ostream& operator <<(std::ostream& out, QResourceStream& resource);
+
+		//! \brief Prints whole file (QDebug)
+		//!
+		//! Allows printing file to QDebug.\n
+		//! Sample usage:
+		//! \code{.cpp}
+		//! QResourceStream resource;
+		//! if(!resource.open("://BuiltInFile.txt")) {
+		//!		qDebug() << "Could not read resource!";
+		//! } else {
+		//!		qDebug() << "Content:" << resource;
+		//! }
+		//! \endcode
+		friend QDebug operator <<(QDebug out, const QResourceStream& resource);
+
 	private:
 		void * dat;
 		sf::Int64 pos;

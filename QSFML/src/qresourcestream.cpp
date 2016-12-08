@@ -4,6 +4,7 @@
  * =========================================================== */
 
 #include "qresourcestream.hpp"
+#include <qdebug.h>
 
 namespace qsf {
 	QResourceStream::QResourceStream() {
@@ -60,11 +61,17 @@ namespace qsf {
 	}
 
 	QResourceStream & QResourceStream::operator()(const char* path) {
+		qDebug() << *this;
+
 		open(path);
 		return *this;
 	}
 
 	std::ostream& operator <<(std::ostream& out, QResourceStream& resource) {
+		return out << static_cast<char*>(resource.dat);
+	}
+
+	QDebug operator <<(QDebug out, const QResourceStream& resource) {
 		return out << static_cast<char*>(resource.dat);
 	}
 }
