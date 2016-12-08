@@ -130,6 +130,8 @@ Functions</h2></td></tr>
 <tr class="separator:a112c4ed8b0d7decd581a45f348b154c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afa4f06ca6f6e72f7370c4a0c14ecabfb"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceqsf.html#afa4f06ca6f6e72f7370c4a0c14ecabfb">operator&lt;&lt;</a> (std::ostream &amp;out, <a class="el" href="classqsf_1_1QResourceStream.html">QResourceStream</a> &amp;resource)</td></tr>
 <tr class="separator:afa4f06ca6f6e72f7370c4a0c14ecabfb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af55ad481695eb7970f83b40fd99f97a7"><td class="memItemLeft" align="right" valign="top">QDebug&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceqsf.html#af55ad481695eb7970f83b40fd99f97a7">operator&lt;&lt;</a> (QDebug out, const <a class="el" href="classqsf_1_1QResourceStream.html">QResourceStream</a> &amp;resource)</td></tr>
+<tr class="separator:af55ad481695eb7970f83b40fd99f97a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Namespace containing all qsf classes and methods. </p>
@@ -202,6 +204,33 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Allows printing file to std::ostream.<br />
 Sample usage: </p><div class="fragment"><div class="line">QResourceStream resource;</div><div class="line"><span class="keywordflow">if</span>(!resource.open(<span class="stringliteral">&quot;://BuiltInFile.txt&quot;</span>)) {</div><div class="line">    std::cerr &lt;&lt; <span class="stringliteral">&quot;Could not read resource!&quot;</span> &lt;&lt; std::endl;</div><div class="line">} <span class="keywordflow">else</span> {</div><div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;Content:&quot;</span> &lt;&lt; std::endl &lt;&lt; resource &lt;&lt; std::endl;</div><div class="line">}</div></div><!-- fragment --> 
+</div>
+</div>
+<a class="anchor" id="af55ad481695eb7970f83b40fd99f97a7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QDebug qsf::operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">QDebug&#160;</td>
+          <td class="paramname"><em>out</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classqsf_1_1QResourceStream.html">QResourceStream</a> &amp;&#160;</td>
+          <td class="paramname"><em>resource</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Allows printing file to QDebug.<br />
+Sample usage: </p><div class="fragment"><div class="line">QResourceStream resource;</div><div class="line"><span class="keywordflow">if</span>(!resource.open(<span class="stringliteral">&quot;://BuiltInFile.txt&quot;</span>)) {</div><div class="line">    qDebug() &lt;&lt; <span class="stringliteral">&quot;Could not read resource!&quot;</span>;</div><div class="line">} <span class="keywordflow">else</span> {</div><div class="line">    qDebug() &lt;&lt; <span class="stringliteral">&quot;Content:&quot;</span> &lt;&lt; resource;</div><div class="line">}</div></div><!-- fragment --> 
 </div>
 </div>
 <a class="anchor" id="a112c4ed8b0d7decd581a45f348b154c9"></a>

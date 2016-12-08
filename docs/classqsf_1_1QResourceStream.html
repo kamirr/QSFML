@@ -104,6 +104,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 Inheritance diagram for qsf::QResourceStream:</div>
 <div class="dyncontent">
 <div class="center"><img src="classqsf_1_1QResourceStream__inherit__graph.png" border="0" usemap="#qsf_1_1QResourceStream_inherit__map" alt="Inheritance graph"/></div>
+<map name="qsf_1_1QResourceStream_inherit__map" id="qsf_1_1QResourceStream_inherit__map">
+</map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -136,8 +138,11 @@ Public Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
 Friends</h2></td></tr>
 <tr class="memitem:a037958395778e9bb53aaaddacb049a5d"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqsf_1_1QResourceStream.html#a037958395778e9bb53aaaddacb049a5d">operator&lt;&lt;</a> (std::ostream &amp;out, <a class="el" href="classqsf_1_1QResourceStream.html">QResourceStream</a> &amp;resource)</td></tr>
-<tr class="memdesc:a037958395778e9bb53aaaddacb049a5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints whole file.  <a href="#a037958395778e9bb53aaaddacb049a5d">More...</a><br /></td></tr>
+<tr class="memdesc:a037958395778e9bb53aaaddacb049a5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints whole file (std::ostream)  <a href="#a037958395778e9bb53aaaddacb049a5d">More...</a><br /></td></tr>
 <tr class="separator:a037958395778e9bb53aaaddacb049a5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a50219191ab70fd0b4257cedb3c1ed2bd"><td class="memItemLeft" align="right" valign="top">QDebug&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqsf_1_1QResourceStream.html#a50219191ab70fd0b4257cedb3c1ed2bd">operator&lt;&lt;</a> (QDebug out, const <a class="el" href="classqsf_1_1QResourceStream.html">QResourceStream</a> &amp;resource)</td></tr>
+<tr class="memdesc:a50219191ab70fd0b4257cedb3c1ed2bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints whole file (QDebug)  <a href="#a50219191ab70fd0b4257cedb3c1ed2bd">More...</a><br /></td></tr>
+<tr class="separator:a50219191ab70fd0b4257cedb3c1ed2bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>sf::InputStream reading QResource files </p>
@@ -394,9 +399,46 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Prints whole file. </p>
+<p>Prints whole file (std::ostream) </p>
 <p>Allows printing file to std::ostream.<br />
 Sample usage: </p><div class="fragment"><div class="line"><a class="code" href="classqsf_1_1QResourceStream.html#addfbb80ca88c26cc283d5d0d1fcb5a16">QResourceStream</a> resource;</div><div class="line"><span class="keywordflow">if</span>(!resource.open(<span class="stringliteral">&quot;://BuiltInFile.txt&quot;</span>)) {</div><div class="line">    std::cerr &lt;&lt; <span class="stringliteral">&quot;Could not read resource!&quot;</span> &lt;&lt; std::endl;</div><div class="line">} <span class="keywordflow">else</span> {</div><div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;Content:&quot;</span> &lt;&lt; std::endl &lt;&lt; resource &lt;&lt; std::endl;</div><div class="line">}</div></div><!-- fragment --> 
+</div>
+</div>
+<a class="anchor" id="a50219191ab70fd0b4257cedb3c1ed2bd"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QDebug operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">QDebug&#160;</td>
+          <td class="paramname"><em>out</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classqsf_1_1QResourceStream.html">QResourceStream</a> &amp;&#160;</td>
+          <td class="paramname"><em>resource</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Prints whole file (QDebug) </p>
+<p>Allows printing file to QDebug.<br />
+Sample usage: </p><div class="fragment"><div class="line"><a class="code" href="classqsf_1_1QResourceStream.html#addfbb80ca88c26cc283d5d0d1fcb5a16">QResourceStream</a> resource;</div><div class="line"><span class="keywordflow">if</span>(!resource.open(<span class="stringliteral">&quot;://BuiltInFile.txt&quot;</span>)) {</div><div class="line">    qDebug() &lt;&lt; <span class="stringliteral">&quot;Could not read resource!&quot;</span>;</div><div class="line">} <span class="keywordflow">else</span> {</div><div class="line">    qDebug() &lt;&lt; <span class="stringliteral">&quot;Content:&quot;</span> &lt;&lt; resource;</div><div class="line">}</div></div><!-- fragment --> 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
