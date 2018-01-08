@@ -42,6 +42,17 @@ namespace qsf {
 		pushEvent(ev);
 		e->accept();
 	}
+	
+	//Mouse move event
+	void QSFMLWidget::mouseMoveEvent(QMouseEvent *e) {
+		sf::Event ev;
+		ev.type = sf::Event::MouseMoved;
+		
+		ev.mouseMove.x = e->localPos().x();
+		ev.mouseMove.y = e->localPos().y();
+		
+		pushEvent(ev);
+	}
 
 	//Keyboard events
 	void QSFMLWidget::keyPressEvent(QKeyEvent *event) {

@@ -154,6 +154,9 @@ namespace qsf {
 		//Mouse wheel
 		void wheelEvent(QWheelEvent *e);
 
+		//Mouse move
+		void mouseMoveEvent(QMouseEvent *e);
+
 		//Keyboard
 		void keyPressEvent(QKeyEvent *e);
 		void keyReleaseEvent(QKeyEvent *e);
