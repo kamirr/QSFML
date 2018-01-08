@@ -148,14 +148,14 @@ namespace qsf {
 		 * EVENTS HANDLING *
 		 * =============== */
 		//Mouse buttons
-        void mousePressEvent(QMouseEvent *e);
+		void mousePressEvent(QMouseEvent *e);
 		void mouseReleaseEvent(QMouseEvent *e);
 
 		//Mouse wheel
 		void wheelEvent(QWheelEvent *e);
-		
+
 		//Mouse move
-        void mouseMoveEvent(QMouseEvent *e);
+		void mouseMoveEvent(QMouseEvent *e);
 
 		//Keyboard
 		void keyPressEvent(QKeyEvent *e);
