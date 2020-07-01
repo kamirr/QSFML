@@ -7,7 +7,7 @@ Library that integrates SFML 2.3.x; 2.4.1+ (2.4.0 causes a X11-related problem) 
 ### Source code
 
 ```
-$ git clone https://github.com/KoczurekK/QSFML.git
+$ git clone https://github.com/kamirr/QSFML.git
 $ cd QSFML/QSFML/src
 $ qmake
 $ make
