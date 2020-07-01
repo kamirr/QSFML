@@ -22,7 +22,7 @@ Download .deb packages from last release and install them.
 All header files are in QSFML subdirectory, include useful ones and remember to link with -lQSFML.
 
 ## Documentation
-You can find docs [here](https://koczurekk.github.io/QSFML/).<br />
+You can find docs [here](https://kamirr.github.io/QSFML/).<br />
 Generated using doxygen, It's not good-looking, but I don't have time to change doxygen's .css files.
 
 ## Origins
